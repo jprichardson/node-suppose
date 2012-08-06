@@ -28,8 +28,8 @@ describe('suppose', function(){
         function runIt() {
             process.chdir(currentPath);
             suppose('npm', ['init'])
-              //.on(/^name\: \([\w]+\)[\s]*/).respond("awesome_package\r")
-              .on('name: (suppose-test) ').respond('awesome_package\n')
+              .on(/name\: \([\w|\-]+\)[\s]*/).respond("awesome_package\n")
+              //.on('name: (suppose-test) ').respond('awesome_package\n')
               .on('version: (0.0.0) ').respond('0.0.1\n')
               .on('description: ').respond("It's an awesome package man!\n")
               .on('entry point: (index.js) ').respond("\n")

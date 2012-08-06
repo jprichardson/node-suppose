@@ -8,7 +8,7 @@ Have you ever heard of the command line program [expect][1]? Basically, `expect`
 Why?
 ----
 
-From the [expect wikipedia][1] page, you can see many examples of `expect` scripts automating tasks such as `telnet` or `ftp` solutions. Now you can easily write Node.js scripts to do the same. This may be most beneficial during testing.
+From the [expect wikipedia][1] page, you can see many examples of `expect` scripts automating tasks such as `telnet` or `ftp` sessions. Now you can easily write Node.js scripts to do the same. This may be most beneficial during testing.
 
 
 
