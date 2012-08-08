@@ -1,3 +1,7 @@
+0.0.4 / 2012-08-07
+------------------
+* Added `debug` method to output stdio to writeable stream.
+
 0.0.3 / 2012-08-06
 ------------------
 * Supports matching regular expressions now.

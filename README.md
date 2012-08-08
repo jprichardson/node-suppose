@@ -27,7 +27,8 @@ Automate the command `npm init`, which initializes a new npm module.
 ```javascript
 process.chdir('/tmp/awesome');
 suppose('npm', ['init'])
-  .on('name: (awesome) ').respond('awesome_package\n')
+  .debug(fs.createWriteStream('/tmp/debug.txt')) //optional writeable output stream
+  .on(/name\: \([\w|\-]+\)[\s]*/).respond('awesome_package\n')
   .on('version: (0.0.0) ').respond('0.0.1\n')
   .on('description: ').respond("It's an awesome package man!\n")
   .on('entry point: (index.js) ').respond("\n")
