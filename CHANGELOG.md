@@ -1,3 +1,7 @@
+0.0.5 / 2012-08-08
+------------------
+* `debug` method now logs the command at the top of write stream.
+
 0.0.4 / 2012-08-07
 ------------------
 * Added `debug` method to output stdio to writeable stream.
