@@ -2,7 +2,8 @@ var assert = require('assert')
   , suppose = require('../lib/suppose')
   , path = require('path-extra')
   , fs = require('fs-extra')
-  , P = require('autoresolve');
+  , P = require('autoresolve')
+  , S = require('string');
 
 var TEST_DIR = path.join(path.tempdir(), 'test-suppose');
 
@@ -91,4 +92,22 @@ describe('suppose', function(){
             });
         });
     });
+
+    it('should call the error method if there is an error', function(done) {
+        var someErr = null;
+
+        function onError(err) {
+            someErr = err;
+        }
+
+        process.chdir(TEST_DIR);
+        suppose('node', ['this_script_does_not_exist.js'])
+          .error(onError)
+          .end(function(code) {
+            assert(someErr);
+            assert(S(someErr.message).startsWith('Error: Cannot find module'))
+            done();
+          });
+    });
 });
+

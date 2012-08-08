@@ -38,6 +38,9 @@ suppose('npm', ['init'])
   .on('author: ').respond('JP Richardson\n')
   .on('license: (BSD) ').respond('MIT\n')
   .on('ok? (yes) ' ).respond('yes\n')
+.error(function(err){
+    console.log(err.message);
+})
 .end(function(code){
     assert(code === 0);
     var packageFile = '/tmp/awesome/package.json';

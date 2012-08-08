@@ -1,3 +1,7 @@
+0.0.6 / 2012-08-09
+------------------
+* Added `error` method.
+
 0.0.5 / 2012-08-08
 ------------------
 * `debug` method now logs the command at the top of write stream.
