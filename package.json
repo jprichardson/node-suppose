@@ -1,6 +1,6 @@
 {
     "name" : "suppose", 
-    "version" : "0.0.6",
+    "version" : "0.0.7",
     "description" : "Automate command line programs. Like UNIX expect.",
     "homepage" : [
         "https://github.com/jprichardson/node-fnoc"
@@ -18,8 +18,8 @@
     "dependencies" : {
         "string": "0.2.x"
      },
-     "devDepdencies":{
-        "mocha": "1.3.x",
+     "devDependencies":{
+        "mocha": "1.4.x",
         "fs-extra": "0.1.x",
         "path-extra": "0.0.x",
         "autoresolve": "0.0.x" 

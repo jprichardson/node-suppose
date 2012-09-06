@@ -1,3 +1,5 @@
+[![build status](https://secure.travis-ci.org/jprichardson/node-suppose.png)](http://travis-ci.org/jprichardson/node-suppose)
+
 Node.js - suppose
 =================
 
@@ -63,6 +65,14 @@ suppose('npm', ['init'])
 Always follow an `.on()` with a `.respond()` and then finish with a `.end()`.
 
 
+
+Author
+------
+
+`node-batchflow` was written by [JP Richardson][aboutjp]. You should follow him on Twitter [@jprichardson][twitter]. Also read his coding blog [Procbits][procbits]. If you write software with others, you should checkout [Gitpilot][gitpilot] to make collaboration with Git simple.
+
+
+
 License
 -------
 
@@ -73,3 +83,10 @@ Copyright 2012, JP Richardson
 
 
 [1]: http://en.wikipedia.org/wiki/Expect
+
+
+[aboutjp]: http://about.me/jprichardson
+[twitter]: http://twitter.com/jprichardson
+[procbits]: http://procbits.com
+[gitpilot]: http://gitpilot.com
+
