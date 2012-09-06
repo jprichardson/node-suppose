@@ -1,4 +1,3 @@
-[![build status](https://secure.travis-ci.org/jprichardson/node-suppose.png)](http://travis-ci.org/jprichardson/node-suppose)
 
 Node.js - suppose
 =================
