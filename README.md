@@ -51,7 +51,7 @@ suppose('npm', ['init'])
   var packageFile = '/tmp/awesome/package.json';
   fs.readFile(packageFile, function(err, data){
     var packageObj = JSON.parse(data.toString());
-    console.log(packageObj.name); //'awesome_package')
+    console.log(packageObj.name); //'awesome_package'
   })
 })
 ```
