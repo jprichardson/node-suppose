@@ -26,7 +26,12 @@ Example
 Automate the command `npm init`, which initializes a new npm module.
 
 ```javascript
+var suppose = require('suppose')
+  , fs = require('fs')
+  , assert = require('assert')
+
 process.chdir('/tmp/awesome');
+fs.writeFileSync('/tmp/awesome/README.md', 'READ IT')
 suppose('npm', ['init'])
   .debug(fs.createWriteStream('/tmp/debug.txt')) //optional writeable output stream
   .on(/name\: \([\w|\-]+\)[\s]*/).respond('awesome_package\n')
@@ -40,25 +45,15 @@ suppose('npm', ['init'])
   .on('license: (BSD) ').respond('MIT\n')
   .on('ok? (yes) ' ).respond('yes\n')
 .error(function(err){
-    console.log(err.message);
+  console.log(err.message);
 })
 .end(function(code){
-    assert(code === 0);
-    var packageFile = '/tmp/awesome/package.json';
-    fs.readFile(packageFile, function(err, data){
-        var packageObj = JSON.parse(data.toString());
-        assert(packageObj.name === 'awesome_package');
-        assert(packageObj.version === '0.0.1');
-        assert(packageObj.description === "It's an awesome package man!");
-        assert(packageObj.main === 'index.js');
-        assert(packageObj.scripts.test === 'npm test');
-        assert(packageObj.keywords[0] === 'awesome');
-        assert(packageObj.keywords[1] === 'cool');
-        assert(packageObj.author === 'JP Richardson');
-        assert(packageObj.license === 'MIT');
-        done();
-    });
-});
+  var packageFile = '/tmp/awesome/package.json';
+  fs.readFile(packageFile, function(err, data){
+    var packageObj = JSON.parse(data.toString());
+    console.log(packageObj.name); //'awesome_package')
+  })
+})
 ```
 
 Always follow an `.on()` with a `.respond()` and then finish with a `.end()`.
