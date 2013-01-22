@@ -1,3 +1,5 @@
+//not in use yet
+
 var assert = require('assert')
   , suppose = require('../lib/suppose')
   , path = require('path-extra')
@@ -36,7 +38,7 @@ PassthroughStream.prototype.destroy = function() {
 //util.inherits(process.stdout, Stream);
 
 
-describe('+ suppose', function(){
+describe.skip('+ suppose', function(){
     beforeEach(function(done){
         fs.exists(TEST_DIR, function(itDoes){
             if (itDoes) {

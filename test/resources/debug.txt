@@ -29,6 +29,7 @@ About to write to /private/tmp/test-suppose/package.json:
   "scripts": {
     "test": "npm test"
   },
+  "repository": "",
   "keywords": [
     "awesome",
     "cool"

@@ -1,3 +1,9 @@
+0.1.0 / 2013-01-22
+------------------
+* Updated deps.
+* Changed identing from 4 spaces to 2.
+* Updated tests for modern `npm`.
+
 0.0.7 / 2012-09-06
 ------------------
 * Added Travis-CI support.
