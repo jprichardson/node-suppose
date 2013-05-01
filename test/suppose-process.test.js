@@ -1,5 +1,4 @@
-var assert = require('assert')
-  , testutil = require('testutil')
+var testutil = require('testutil')
   , suppose = require('../lib/suppose')
   , path = require('path')
   , fs = require('fs-extra')
@@ -38,15 +37,15 @@ describe('+ suppose', function(){
         var packageFile = path.join(TEST_DIR, 'package.json');
         fs.readFile(packageFile, function(err, data){
           var packageObj = JSON.parse(data.toString());
-          T (packageObj.name === 'awesome_package')
-          T (packageObj.version === '0.0.1')
-          T (packageObj.description === "It's an awesome package man!")
-          T (packageObj.main === 'index.js')
-          T (packageObj.scripts.test === 'npm test')
-          T (packageObj.keywords[0] === 'awesome')
-          T (packageObj.keywords[1] === 'cool')
-          T (packageObj.author === 'JP Richardson')
-          T (packageObj.license === 'MIT')
+          EQ (packageObj.name, 'awesome_package')
+          EQ (packageObj.version, '0.0.1')
+          EQ (packageObj.description, "It's an awesome package man!")
+          EQ (packageObj.main, 'index.js')
+          EQ (packageObj.scripts.test, 'npm test')
+          EQ (packageObj.keywords[0], 'awesome')
+          EQ (packageObj.keywords[1], 'cool')
+          EQ (packageObj.author, 'JP Richardson')
+          EQ (packageObj.license, 'MIT')
           done();
         })
       })
@@ -69,19 +68,19 @@ describe('+ suppose', function(){
         .on('license: (BSD) ').respond('MIT\n')
         .on('ok? (yes) ' ).respond('yes\n')
       .end(function(code){
-        assert(code === 0);
+        EQ (code, 0);
         var packageFile = path.join(TEST_DIR, 'package.json');
         fs.readFile(packageFile, function(err, data){
           var packageObj = JSON.parse(data.toString());
-          T (packageObj.name === 'awesome_package')
-          T (packageObj.version === '0.0.1')
-          T (packageObj.description === "It's an awesome package man!")
-          T (packageObj.main === 'index.js')
-          T (packageObj.scripts.test === 'npm test')
-          T (packageObj.keywords[0] === 'awesome')
-          T (packageObj.keywords[1] === 'cool')
-          T (packageObj.author === 'JP Richardson')
-          T (packageObj.license === 'MIT')
+          EQ (packageObj.name, 'awesome_package')
+          EQ (packageObj.version, '0.0.1')
+          EQ (packageObj.description, "It's an awesome package man!")
+          EQ (packageObj.main, 'index.js')
+          EQ (packageObj.scripts.test, 'npm test')
+          EQ (packageObj.keywords[0], 'awesome')
+          EQ (packageObj.keywords[1], 'cool')
+          EQ (packageObj.author, 'JP Richardson')
+          EQ (packageObj.license, 'MIT')
           
           //check debug file
           var debugString = fs.readFileSync(debugFile).toString();
