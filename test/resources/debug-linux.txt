@@ -1,0 +1,43 @@
+npm init
+---------
+This utility will walk you through creating a package.json file.
+It only covers the most common items, and tries to guess sane defaults.
+
+See `npm help json` for definitive documentation on these fields
+and exactly what they do.
+
+Use `npm install <pkg> --save` afterwards to install a package and
+save it as a dependency in the package.json file.
+
+Press ^C at any time to quit.
+name: (test-suppose) awesome_package
+version: (0.0.0) 0.0.1
+description: It's an awesome package man!
+entry point: (index.js) 
+test command: npm test
+git repository: 
+keywords: awesome, cool
+author: JP Richardson
+license: (BSD) MIT
+About to write to /tmp/test-suppose/package.json:
+
+{
+  "name": "awesome_package",
+  "version": "0.0.1",
+  "description": "It's an awesome package man!",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": "",
+  "keywords": [
+    "awesome",
+    "cool"
+  ],
+  "author": "JP Richardson",
+  "license": "MIT",
+  "readmeFilename": "README.md"
+}
+
+
+Is this ok? (yes) yes
