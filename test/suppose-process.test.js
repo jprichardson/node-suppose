@@ -4,7 +4,8 @@ var testutil = require('testutil')
   , fs = require('fs-extra')
   , P = require('autoresolve')
   , S = require('string')
-  , readline = require('readline');
+  , readline = require('readline')
+  , os = require('os')
 
 var TEST_DIR = ''
 
@@ -82,9 +83,15 @@ describe('+ suppose', function(){
           EQ (packageObj.author, 'JP Richardson')
           EQ (packageObj.license, 'MIT')
           
+          var debugResFile = ''
+          if (os.platform() === 'darwin')
+            debugResFile = P('test/resources/debug-darwin.txt')
+          else
+            debugResFile = P('test/resources/debug-linux.txt')
+
           //check debug file
           var debugString = fs.readFileSync(debugFile).toString();
-          var checkString = fs.readFileSync(P('test/resources/debug.txt')).toString();
+          var checkString = fs.readFileSync(debugResFile).toString();
           EQ (debugString, checkString)
           done()
         })
