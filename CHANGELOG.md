@@ -1,3 +1,8 @@
+0.2.0 / 2013-05-01
+------------------
+* fixed but to make Node v0.10 compatible
+* dropped Node v0.6 suppport
+
 0.1.0 / 2013-01-22
 ------------------
 * Updated deps.

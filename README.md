@@ -2,6 +2,8 @@
 Node.js - suppose
 =================
 
+[![build status](https://secure.travis-ci.org/jprichardson/node-suppose.png)](http://travis-ci.org/jprichardson/node-suppose)
+
 Have you ever heard of the command line program [expect][1]? Basically, `expect` allows you to automate command line programs. `suppose` is a programmable Node.js module that allows the same behavior.
 
 
@@ -60,11 +62,6 @@ Always follow an `.on()` with a `.respond()` and then finish with a `.end()`.
 
 
 
-Author
-------
-
-`node-suppose` was written by [JP Richardson][aboutjp]. You should follow him on Twitter [@jprichardson][twitter]. Also read his coding blog [Procbits][procbits]. If you write software with others, you should checkout [Gitpilot][gitpilot] to make collaboration with Git simple.
-
 
 
 License
@@ -72,7 +69,7 @@ License
 
 (MIT License)
 
-Copyright 2012, JP Richardson
+Copyright 2012-2013, JP Richardson
 
 
 

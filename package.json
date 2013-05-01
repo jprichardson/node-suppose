@@ -28,7 +28,8 @@
   },
   "devDependencies": {
     "mocha": "*",
-    "autoresolve": "0.0.x"
+    "autoresolve": "0.0.x",
+    "testutil": "~0.5.1"
   },
   "main": "./lib/suppose",
   "scripts": {
