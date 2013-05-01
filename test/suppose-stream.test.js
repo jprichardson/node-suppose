@@ -1,8 +1,10 @@
 //not in use yet
 
+return;
+
 var assert = require('assert')
   , suppose = require('../lib/suppose')
-  , path = require('path-extra')
+  //, path = require('path-extra')
   , fs = require('fs-extra')
   , P = require('autoresolve')
   , S = require('string')
