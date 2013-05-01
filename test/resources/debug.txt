@@ -35,7 +35,8 @@ About to write to /private/tmp/test-suppose/package.json:
     "cool"
   ],
   "author": "JP Richardson",
-  "license": "MIT"
+  "license": "MIT",
+  "readmeFilename": "README.md"
 }
 
 
