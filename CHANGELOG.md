@@ -1,3 +1,7 @@
+0.3.0 / 2013-11-07
+------------------
+* `.end()` now returns internal process object. (pstaender  / #5)
+
 0.2.0 / 2013-05-01
 ------------------
 * fixed but to make Node v0.10 compatible

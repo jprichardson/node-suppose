@@ -61,7 +61,9 @@ suppose('npm', ['init'])
 Always follow an `.on()` with a `.respond()` and then finish with a `.end()`.
 
 
-
+Contributors
+------------
+- [*] [Philipp Staender](https://github.com/pstaender)
 
 
 License
