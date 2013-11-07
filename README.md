@@ -2,7 +2,9 @@
 Node.js - suppose
 =================
 
+<!--
 [![build status](https://secure.travis-ci.org/jprichardson/node-suppose.png)](http://travis-ci.org/jprichardson/node-suppose)
+-->
 
 Have you ever heard of the command line program [expect][1]? Basically, `expect` allows you to automate command line programs. `suppose` is a programmable Node.js module that allows the same behavior.
 
