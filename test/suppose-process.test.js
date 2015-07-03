@@ -82,7 +82,7 @@ describe('+ suppose', function(){
           EQ (packageObj.keywords[1], 'cool')
           EQ (packageObj.author, 'JP Richardson')
           EQ (packageObj.license, 'MIT')
-          
+
           var debugResFile = ''
           if (os.platform() === 'darwin')
             debugResFile = P('test/resources/debug-darwin.txt')
@@ -113,6 +113,21 @@ describe('+ suppose', function(){
         done()
       })
     })
+
+    it('should call a method as response', function(done) {
+      var pid = null
+
+      process.chdir(TEST_DIR);
+      suppose('ls', ['-l'])
+      .on(/total \d+\s*/).respond(function(exe)
+      {
+        pid = exe.pid
+      })
+      .end(function(code) {
+        EQ (code, 0);
+        T (pid);
+        done()
+      })
+    })
   })
 })
-
