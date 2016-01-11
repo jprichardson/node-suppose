@@ -1,7 +1,7 @@
 npm init
 ---------
 This utility will walk you through creating a package.json file.
-It only covers the most common items, and tries to guess sane defaults.
+It only covers the most common items, and tries to guess sensible defaults.
 
 See `npm help json` for definitive documentation on these fields
 and exactly what they do.
@@ -11,14 +11,14 @@ save it as a dependency in the package.json file.
 
 Press ^C at any time to quit.
 name: (test-suppose) awesome_package
-version: (0.0.0) 0.0.1
+version: (1.0.0) 0.0.1
 description: It's an awesome package man!
 entry point: (index.js) 
 test command: npm test
 git repository: 
 keywords: awesome, cool
 author: JP Richardson
-license: (BSD) MIT
+license: (ISC) MIT
 About to write to /private/tmp/test-suppose/package.json:
 
 {
@@ -29,14 +29,12 @@ About to write to /private/tmp/test-suppose/package.json:
   "scripts": {
     "test": "npm test"
   },
-  "repository": "",
   "keywords": [
     "awesome",
     "cool"
   ],
   "author": "JP Richardson",
-  "license": "MIT",
-  "readmeFilename": "README.md"
+  "license": "MIT"
 }
 
 
