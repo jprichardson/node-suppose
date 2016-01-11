@@ -24,16 +24,17 @@
     }
   ],
   "dependencies": {
-    "string": "~1.2.0"
+    "force-array": "^3.1.0",
+    "string": "~3.3.1"
   },
   "devDependencies": {
-    "mocha": "*",
     "autoresolve": "0.0.x",
-    "testutil": "~0.5.1",
-    "fs-extra": "~0.6.0"
+    "fs-extra": "~0.26.4",
+    "mocha": "^2.3.4",
+    "testutil": "~0.7.0"
   },
   "main": "./lib/suppose",
   "scripts": {
-    "test": "mocha test"
+    "test": "mocha"
   }
 }
