@@ -2,9 +2,7 @@
   "name": "suppose",
   "version": "0.4.0",
   "description": "Automate command line programs. Like UNIX expect.",
-  "homepage": [
-    "https://github.com/jprichardson/node-fnoc"
-  ],
+  "homepage": "https://github.com/jprichardson/node-suppose",
   "repository": {
     "type": "git",
     "url": "https://github.com/jprichardson/node-suppose"
@@ -17,12 +15,7 @@
     "unix"
   ],
   "author": "JP Richardson <jprichardson@gmail.com>",
-  "licenses": [
-    {
-      "type": "MIT",
-      "url": "http://github.com/jprichardson/node-suppose/raw/master/LICENSE"
-    }
-  ],
+  "license": "MIT",
   "dependencies": {
     "force-array": "^3.1.0",
     "string": "~3.3.1"
