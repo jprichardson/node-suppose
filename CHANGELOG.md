@@ -1,3 +1,19 @@
+0.4.0 / 2016-01-11
+------------------
+* *Breaking* `suppose()` arguments have changed.  It can be called as
+  `suppose(command[, args][, options])` to suppose against process input/output
+  or `suppose([options])` to suppose as a `stream` that receives input and
+  outputs responses.
+* *Breaking* Use `.when()` instead of `.on()` for expectations.
+* *Breaking* Use `.on('error')` instead of `.error()` for error handling.
+* *Breaking* Use `debug` option instead of `.debug()` to provide a stream
+  which receives debugging output.
+
+0.3.1 / 2015-11-05
+------------------
+* Support callback function as response (piranna  / #8)
+* Support response as optional argument to `.on()`
+
 0.3.0 / 2013-11-07
 ------------------
 * `.end()` now returns internal process object. (pstaender  / #5)
