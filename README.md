@@ -36,19 +36,20 @@ var suppose = require('suppose')
 
 process.chdir('/tmp/awesome');
 fs.writeFileSync('/tmp/awesome/README.md', 'READ IT')
-suppose('npm', ['init'])
-  .debug(fs.createWriteStream('/tmp/debug.txt')) //optional writeable output stream
-  .on(/name\: \([\w|\-]+\)[\s]*/).respond('awesome_package\n')
-  .on('version: (0.0.0) ').respond('0.0.1\n')
-  .on('description: ').respond("It's an awesome package man!\n")
-  .on('entry point: (index.js) ').respond("\n")
-  .on('test command: ').respond('npm test\n')
-  .on('git repository: ').respond("\n")
-  .on('keywords: ').respond('awesome, cool\n')
-  .on('author: ').respond('JP Richardson\n')
-  .on('license: (BSD) ').respond('MIT\n')
-  .on('ok? (yes) ' ).respond('yes\n')
-.error(function(err){
+// debug is an optional writeable output stream
+suppose('npm', ['init'], {debug: fs.createWriteStream('/tmp/debug.txt')})
+  .when(/name\: \([\w|\-]+\)[\s]*/).respond('awesome_package\n')
+  .when('version: (1.0.0) ').respond('0.0.1\n')
+  // response can also be the second argument to .when
+  .when('description: ', "It's an awesome package man!\n")
+  .when('entry point: (index.js) ').respond("\n")
+  .when('test command: ').respond('npm test\n')
+  .when('git repository: ').respond("\n")
+  .when('keywords: ').respond('awesome, cool\n')
+  .when('author: ').respond('JP Richardson\n')
+  .when('license: (ISC) ').respond('MIT\n')
+  .when('ok? (yes) ' ).respond('yes\n')
+.on('error', function(err){
   console.log(err.message);
 })
 .end(function(code){
@@ -60,7 +61,9 @@ suppose('npm', ['init'])
 })
 ```
 
-Always follow an `.on()` with a `.respond()` and then finish with a `.end()`.
+`.respond()` may be called any number of times after `.when()`.  Each response
+will be sent in the order defined when the condition matches.  Once all
+conditions and responses are defined, call `.end()` to begin execution.
 
 
 Contributors
