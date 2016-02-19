@@ -22,12 +22,19 @@ describe('stream', function()
       .when('Hi').respond('Bye')
     .pipe(output)
 
-    input.push('Hi')
     output.once('data', function(chunk, encoding, next)
     {
       assert.strictEqual(chunk.toString(), 'Bye')
 
-      done()
+      output.once('data', function(chunk, encoding, next)
+      {
+        throw new Error('Unexpected output: ' + chunk);
+      })
     })
+    output.once('error', done)
+    output.once('end', done)
+
+    input.push('Hi')
+    input.push('Unexpected')
   })
 })
