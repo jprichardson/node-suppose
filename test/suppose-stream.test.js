@@ -37,4 +37,19 @@ describe('stream', function()
     input.push('Hi')
     input.push('Unexpected')
   })
+
+  it('should end if no expectations', function(done)
+  {
+    var suppose = new SupposeStream()
+
+    suppose.once('data', function(chunk, encoding, next)
+    {
+      throw new Error('Unexpected output: ' + chunk);
+    })
+    suppose.once('error', done)
+    suppose.once('end', done)
+
+    suppose.write('Hi')
+    // stream should end without end of input
+  })
 })
