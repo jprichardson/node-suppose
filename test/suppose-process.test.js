@@ -145,4 +145,15 @@ describe('process', function()
       done()
     })
   })
+
+  it('should end if no expectations and no output', function(done)
+  {
+    suppose('cat')
+    .end(function(code)
+    {
+      assert.strictEqual(code, 0)
+
+      done()
+    })
+  })
 })
