@@ -15,6 +15,9 @@
     "unix"
   ],
   "author": "JP Richardson <jprichardson@gmail.com>",
+  "contributors": [
+    "Kevin Locke <kevin@kevinlocke.name>"
+  ],
   "license": "MIT",
   "dependencies": {
     "force-array": "^3.1.0",
