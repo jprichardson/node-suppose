@@ -25,8 +25,8 @@
   },
   "devDependencies": {
     "autoresolve": "0.0.x",
-    "fs-extra": "~0.26.4",
-    "mocha": "^2.3.4",
+    "fs-extra": "~0.26.5",
+    "mocha": "^2.4.5",
     "testutil": "~0.7.0"
   },
   "main": "./lib/suppose",
