@@ -133,10 +133,12 @@ describe('process', function()
     process.chdir(this.TEST_DIR)
 
     suppose('ls', ['-l'])
-    .when(/total \d+\s*/).respond(function(exe)
+    .when(/total (\d+)\s*/).respond(function(exe, num)
     {
       assert.notStrictEqual(exe, undefined)
       assert.notStrictEqual(exe.pid, undefined)
+
+      assert.ok(!isNaN(num))
     })
     .end(function(code)
     {

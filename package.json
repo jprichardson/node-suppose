@@ -1,6 +1,6 @@
 {
   "name": "suppose",
-  "version": "0.5.1",
+  "version": "0.5.2",
   "description": "Automate command line programs. Like UNIX expect.",
   "homepage": "https://github.com/jprichardson/node-suppose",
   "repository": {
