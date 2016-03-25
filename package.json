@@ -35,8 +35,8 @@
   "devDependencies": {
     "autoresolve": "0.0.x",
     "fs-extra": "~0.26.5",
-    "mocha": "^2.4.5",
     "standard": "^6.0.8",
+    "tape": "^4.5.1",
     "testutil": "~0.7.0"
   }
 }
