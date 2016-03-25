@@ -4,10 +4,9 @@ var os = require('os')
 
 var fs = require('fs-extra')
 var P = require('autoresolve')
-var S = require('string')
 var testutil = require('testutil')
 
-var suppose = require('../lib/suppose')
+var SupposeProcess = require('../').Process
 
 function before (next) {
   return function (t) {
@@ -22,9 +21,8 @@ function before (next) {
 test('should automate the command: npm init', before(function (t) {
   process.chdir(t.context.TEST_DIR)
 
-  suppose('npm', ['init'])
+  new SupposeProcess('npm', ['init'])
     .when(/name\: \((\w|\-)+\)\s*/).respond('awesome_package\n')
-    // .when('name: (test-suppose) ').respond('awesome_package\n')
     .when('version: (1.0.0) ').respond('0.0.1\n')
     .when('description: ').respond('It\'s an awesome package man!\n')
     .when('entry point: (index.js) ').respond('\n')
@@ -57,9 +55,8 @@ test('should automate the command: npm init and output stdio', before(function (
   var debugFile = join(t.context.TEST_DIR, 'debug.txt')
   process.chdir(t.context.TEST_DIR)
 
-  suppose('npm', ['init'], { debug: fs.createWriteStream(debugFile) })
+  new SupposeProcess('npm', ['init'], { debug: fs.createWriteStream(debugFile) })
     .when(/name\: \([\w|\-]+\)[\s]*/).respond('awesome_package\n')
-    // .when('name: (test-suppose) ').respond('awesome_package\n')
     .when('version: (1.0.0) ').respond('0.0.1\n')
     .when('description: ').respond("It's an awesome package man!\n")
     .when('entry point: (index.js) ').respond('\n')
@@ -101,21 +98,21 @@ test('should automate the command: npm init and output stdio', before(function (
 test('should emit the error event if there is an error', before(function (t) {
   process.chdir(t.context.TEST_DIR)
 
-  suppose('node', [ 'this_script_does_not_exist.js' ])
+  t.plan(3)
+  new SupposeProcess('node', [ 'this_script_does_not_exist.js' ])
     .on('error', function (err) {
-      t.notSame(err, undefined)
-      t.ok(S(err.message).contains('Error: Cannot find module'))
+      t.ok(err.toString().match(/Error: Cannot find module/))
     })
     .end(function (code) {
       t.notSame(code, 0)
-      t.end()
     })
 }))
 
 test('should call a method as response', before(function (t) {
   process.chdir(t.context.TEST_DIR)
 
-  suppose('ls', ['-l'])
+  t.plan(5)
+  new SupposeProcess('ls', [ '-l' ])
     .when(/total (\d+)\s*/).respond(function (exe, num) {
       t.notSame(exe, undefined)
       t.notSame(exe.pid, undefined)
@@ -123,12 +120,11 @@ test('should call a method as response', before(function (t) {
     })
     .end(function (code) {
       t.same(code, 0)
-      t.end()
     })
 }))
 
 test('should end if no expectations and no output', before(function (t) {
-  suppose('cat')
+  new SupposeProcess('cat')
     .end(function (code) {
       t.same(code, 0)
       t.end()

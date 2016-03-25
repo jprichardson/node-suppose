@@ -16,9 +16,11 @@
     "Kevin Locke <kevin@kevinlocke.name>"
   ],
   "files": [
-    "lib"
+    "lib",
+    "browser.js",
+    "index.js"
   ],
-  "main": "./lib/suppose",
+  "main": "./index.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/jprichardson/node-suppose"
@@ -30,8 +32,7 @@
     "unit": "tape test/*.js"
   },
   "dependencies": {
-    "force-array": "^3.1.0",
-    "string": "~3.3.1"
+    "inherits": "^2.0.1"
   },
   "devDependencies": {
     "autoresolve": "0.0.x",
@@ -40,5 +41,6 @@
     "standard": "^6.0.8",
     "tape": "^4.5.1",
     "testutil": "~0.7.0"
-  }
+  },
+  "browser": "./browser.js"
 }

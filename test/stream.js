@@ -1,7 +1,7 @@
 var test = require('tape').test
 var PassThrough = require('stream').PassThrough
 
-var SupposeStream = require('../lib/suppose-stream')
+var SupposeStream = require('../').Stream
 
 function unexpectedOutput (chunk) {
   throw new Error('Unexpected output: ' + chunk)
@@ -11,7 +11,7 @@ test('should respond to a stream', function (t) {
   var input = new PassThrough()
   var output = new PassThrough()
 
-  input.pipe(SupposeStream())
+  input.pipe(new SupposeStream())
     .when('Hi').respond('Bye')
     .pipe(output)
 
