@@ -1,2 +1,4 @@
-node_modules/
+.nyc_output
+node_modules
+
 npm-debug.log
