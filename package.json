@@ -2,11 +2,6 @@
   "name": "suppose",
   "version": "0.5.2",
   "description": "Automate command line programs. Like UNIX expect.",
-  "homepage": "https://github.com/jprichardson/node-suppose",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/jprichardson/node-suppose"
-  },
   "keywords": [
     "test",
     "testing",
@@ -14,11 +9,25 @@
     "expect",
     "unix"
   ],
+  "homepage": "https://github.com/jprichardson/node-suppose",
+  "license": "MIT",
   "author": "JP Richardson <jprichardson@gmail.com>",
   "contributors": [
     "Kevin Locke <kevin@kevinlocke.name>"
   ],
-  "license": "MIT",
+  "files": [
+    "lib"
+  ],
+  "main": "./lib/suppose",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jprichardson/node-suppose"
+  },
+  "scripts": {
+    "lint": "standard",
+    "test": "npm run lint && npm run unit",
+    "unit": "tape test/*.js"
+  },
   "dependencies": {
     "force-array": "^3.1.0",
     "string": "~3.3.1"
@@ -27,10 +36,7 @@
     "autoresolve": "0.0.x",
     "fs-extra": "~0.26.5",
     "mocha": "^2.4.5",
+    "standard": "^6.0.8",
     "testutil": "~0.7.0"
-  },
-  "main": "./lib/suppose",
-  "scripts": {
-    "test": "mocha"
   }
 }
