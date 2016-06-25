@@ -1,27 +1,28 @@
+[![build status](https://secure.travis-ci.org/jprichardson/node-suppose.png)](http://travis-ci.org/jprichardson/node-suppose)
+
 
 Node.js - suppose
 =================
 
-<!--
-[![build status](https://secure.travis-ci.org/jprichardson/node-suppose.png)](http://travis-ci.org/jprichardson/node-suppose)
--->
-
-Have you ever heard of the command line program [expect][1]? Basically, `expect` allows you to automate command line programs. `suppose` is a programmable Node.js module that allows the same behavior.
-
+Have you ever heard of the command line program [expect][1]? Basically, `expect`
+allows you to automate command line programs. `suppose` is a programmable
+Node.js module that allows the same behavior.
 
 
 Why?
 ----
 
-From the [expect wikipedia][1] page, you can see many examples of `expect` scripts automating tasks such as `telnet` or `ftp` sessions. Now you can easily write Node.js scripts to do the same. This may be most beneficial during testing.
-
+From the [expect wikipedia][1] page, you can see many examples of `expect`
+scripts automating tasks such as `telnet` or `ftp` sessions. Now you can easily
+write Node.js scripts to do the same. This may be most beneficial during testing.
 
 
 Installation
 ------------
 
-    npm install suppose
-
+```sh
+npm install suppose
+```
 
 
 Example
@@ -68,7 +69,9 @@ conditions and responses are defined, call `.end()` to begin execution.
 
 Contributors
 ------------
-- [*] [Philipp Staender](https://github.com/pstaender)
+
+* [Philipp Staender](https://github.com/pstaender)
+* [Jesús Leganés Combarro 'piranna'](https://github.com/piranna)
 
 
 License
@@ -87,4 +90,3 @@ Copyright 2012-2013, JP Richardson
 [twitter]: http://twitter.com/jprichardson
 [procbits]: http://procbits.com
 [gitpilot]: http://gitpilot.com
-
