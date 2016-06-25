@@ -21,7 +21,8 @@
   "license": "MIT",
   "dependencies": {
     "force-array": "^3.1.0",
-    "string": "~3.3.1"
+    "string": "~3.3.1",
+    "strip-ansi": "^3.0.1"
   },
   "devDependencies": {
     "autoresolve": "0.0.x",

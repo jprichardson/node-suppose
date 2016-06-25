@@ -38,6 +38,25 @@ describe('stream', function()
     input.push('Unexpected')
   })
 
+  it('should strip ANSI codes', function(done)
+  {
+    var input  = new PassThrough()
+    var output = new PassThrough()
+
+    input.pipe(SupposeStream({stripAnsi: true}))
+      .when('Hi').respond('Bye')
+    .pipe(output)
+
+    output.once('data', function(chunk, encoding, next)
+    {
+      assert.strictEqual(chunk.toString(), 'Bye')
+    })
+    output.once('error', done)
+    output.once('end', done)
+
+    input.push('\u001b[4mHi\u001b[0m')
+  })
+
   it('should end if no expectations', function(done)
   {
     var suppose = new SupposeStream()
