@@ -57,6 +57,25 @@ describe('stream', function()
     input.push('\u001b[4mHi\u001b[0m')
   })
 
+  it('should strip ANSI codes splitted in several chunks', function(done)
+  {
+    var input  = new PassThrough()
+    var output = new PassThrough()
+
+    input.pipe(SupposeStream({stripAnsi: true}))
+      .when('I have ANSI').respond('Bye')
+    .pipe(output)
+
+    output.once('data', function(chunk, encoding, next)
+    {
+      assert.strictEqual(chunk.toString(), 'Bye')
+    })
+    output.once('error', done)
+    output.once('end', done)
+
+    'I \u001b[4mhave\u001b[0m ANSI'.split('').forEach(input.push.bind(input))
+  })
+
   it('should end if no expectations', function(done)
   {
     var suppose = new SupposeStream()
