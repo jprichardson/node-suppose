@@ -6,7 +6,6 @@ var util   = require('util')
 
 var fs = require('fs-extra')
 var P = require('autoresolve')
-var S = require('string')
 
 var SupposeStream = require('../lib/suppose-stream')
 

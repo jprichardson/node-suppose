@@ -6,7 +6,6 @@ var readline = require('readline')
 
 var fs       = require('fs-extra')
 var P        = require('autoresolve')
-var S        = require('string')
 var testutil = require('testutil')
 
 var suppose = require('../lib/suppose')
@@ -118,7 +117,7 @@ describe('process', function()
     .on('error',function(err)
     {
       assert.notStrictEqual(err, undefined)
-      assert.ok(S(err.message).contains('Error: Cannot find module'))
+      assert.ok(err.message.includes('Error: Cannot find module'))
     })
     .end(function(code)
     {
