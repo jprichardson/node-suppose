@@ -20,8 +20,8 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "cross-spawn": "^5.0.1",
     "force-array": "^3.1.0",
+    "node-pty": "^0.6.6",
     "strip-ansi": "^3.0.1"
   },
   "devDependencies": {
