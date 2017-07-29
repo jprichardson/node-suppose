@@ -22,12 +22,12 @@
   "dependencies": {
     "escape-string-regexp": "^1.0.5",
     "force-array": "^3.1.0",
-    "node-pty": "^0.6.6",
-    "strip-ansi": "^3.0.1"
+    "node-pty": "^0.6.10",
+    "strip-ansi": "^4.0.0"
   },
   "devDependencies": {
     "enquirer": "^1.0.2",
-    "fs-extra": "~3.0.1",
+    "fs-extra": "^4.0.1",
     "is-windows": "^1.0.1",
     "mocha": "^3.4.2",
     "testutil": "~0.7.0"
