@@ -5,7 +5,6 @@ var PassThrough = require('stream').PassThrough
 var util   = require('util')
 
 var fs = require('fs-extra')
-var P = require('autoresolve')
 
 var SupposeStream = require('../lib/suppose-stream')
 

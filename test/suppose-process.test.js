@@ -5,7 +5,6 @@ var readline = require('readline')
 
 
 var fs       = require('fs-extra')
-var P        = require('autoresolve')
 var testutil = require('testutil')
 
 var suppose = require('../lib/suppose')
@@ -109,9 +108,9 @@ describe('process', function()
 
       var debugResFile = ''
       if (os.platform() === 'darwin')
-        debugResFile = P('test/resources/debug-darwin.txt')
+        debugResFile = `${__dirname}/test/resources/debug-darwin.txt`
       else
-        debugResFile = P('test/resources/debug-linux.txt')
+        debugResFile = `${__dirname}/test/resources/debug-linux.txt`
 
       //check debug file
       var debugString = fs.readFileSync(debugFile).toString()
