@@ -27,10 +27,10 @@
   },
   "devDependencies": {
     "enquirer": "^1.0.2",
-    "fs-extra": "^4.0.1",
     "is-windows": "^1.0.1",
-    "mocha": "^3.4.2",
-    "testutil": "~0.7.0"
+    "fs-extra": "^4.0.1",
+    "mocha": "^3.5.0",
+    "testutil": "^0.7.0"
   },
   "main": "./lib/suppose",
   "scripts": {
