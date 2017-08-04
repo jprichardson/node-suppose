@@ -26,10 +26,11 @@
     "strip-ansi": "^4.0.0"
   },
   "devDependencies": {
-    "autoresolve": "0.0.x",
-    "fs-extra": "~4.0.1",
+    "enquirer": "^1.0.2",
+    "is-windows": "^1.0.1",
+    "fs-extra": "^4.0.1",
     "mocha": "^3.5.0",
-    "testutil": "~0.7.0"
+    "testutil": "^0.7.0"
   },
   "main": "./lib/suppose",
   "scripts": {
