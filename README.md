@@ -1,4 +1,4 @@
-[![build status](https://secure.travis-ci.org/jprichardson/node-suppose.png)](http://travis-ci.org/jprichardson/node-suppose)
+[![build status](https://img.shields.io/travis/jprichardson/node-suppose.svg)](http://travis-ci.org/jprichardson/node-suppose)
 
 
 Node.js - suppose
