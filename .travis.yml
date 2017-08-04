@@ -2,3 +2,13 @@ language: node_js
 node_js:
   - 6
   - 8
+addons:
+  apt:
+    sources:
+      - ubuntu-toolchain-r-test
+    packages:
+      - g++-6
+env:
+  - MATRIX_EVAL="CC=gcc-6 && CXX=g++-6"
+before_install:
+    - eval "${MATRIX_EVAL}"
