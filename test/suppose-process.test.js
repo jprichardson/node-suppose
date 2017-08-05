@@ -1,16 +1,17 @@
-var assert   = require('assert')
-var join     = require('path').join
-var os       = require('os')
-var readline = require('readline')
+var assert    = require('assert')
+var join      = require('path').join
+var os        = require('os')
+var readline  = require('readline')
 
-var fs       = require('fs-extra')
-var isWin    = require('is-windows')()
-var testutil = require('testutil')
+var fs        = require('fs-extra')
+var isWindows = require('is-windows')()
+var stripAnsi = require('strip-ansi')
+var testutil  = require('testutil')
 
-var suppose = require('../lib/suppose')
+var suppose   = require('../lib/suppose')
 
-var it_posixOnly   = isWin ? it.skip : it;
-var it_windowsOnly = isWin ? it : it.skip;
+var it_posixOnly   = isWindows ? it.skip : it;
+var it_windowsOnly = isWindows ? it : it.skip;
 
 
 beforeEach(function(done)
@@ -95,7 +96,12 @@ describe('process', function()
       debugString = debugString.split('\n').slice(2).join('\n')
       checkString = checkString.split('\n').slice(2).join('\n')
 
-      assert.strictEqual(debugString, checkString)
+      //ensure that output contained ansi escape codes (colors)
+      assert.notStrictEqual(debugString, stripAnsi(debugString))
+      assert.notStrictEqual(checkString, stripAnsi(checkString))
+
+      //strip colors because they oddly appeared at inconsistent indexes
+      assert.strictEqual(stripAnsi(debugString), stripAnsi(checkString))
 
       done()
     })
