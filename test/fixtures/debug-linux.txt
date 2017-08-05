@@ -1,51 +1,7 @@
-npm init
---------
-This utility will walk you through creating a package.json file.
-It only covers the most common items, and tries to guess sensible defaults.
-
-See `npm help json` for definitive documentation on these fields
-and exactly what they do.
-
-Use `npm install <pkg> --save` afterwards to install a package and
-save it as a dependency in the package.json file.
-
-Press ^C at any time to quit.
-[1G[0Jname: (test-suppose) [22Gawesome_package
-awesome_package
-[1G[0Jversion: (1.0.0) [18G0.0.1
-0.0.1
-[1G[0Jdescription: [14GIt's an awesome package man!
-It's an awesome package man!
-[1G[0Jentry point: (index.js) [25G
-
-[1G[0Jtest command: [15Gnpm test
-npm test
-[1G[0Jgit repository: [17G
-
-[1G[0Jkeywords: [11Gawesome, cool
-awesome, cool
-[1G[0Jauthor: [9GJP Richardson
-JP Richardson
-[1G[0Jlicense: (ISC) [16GMIT
-MIT
-About to write to /tmp/test-suppose/package.json:
-
-{
-  "name": "awesome_package",
-  "version": "0.0.1",
-  "description": "It's an awesome package man!",
-  "main": "index.js",
-  "scripts": {
-    "test": "npm test"
-  },
-  "keywords": [
-    "awesome",
-    "cool"
-  ],
-  "author": "JP Richardson",
-  "license": "MIT"
-}
-
-
-[1G[0JIs this ok? (yes) [19Gyes
-yes
+node /home/stevenvachon/Desktop/node-suppose/test/helpers/cli-prompt.js
+-----------------------------------------------------------------------
+﻿[1mname[22m [2m(mocked name) [22mawesome_package
+[20D[20C[1000D[K﻿[1mname[22m [2m(mocked name) [22m[20D[20C[1000D[K﻿[1mname[22m [2m(mocked name) [22m[20D[20C[1000D[K﻿[1mname[22m [2m(mocked name) [22m[20D[20C[1000D[K﻿[1mname[22m [2m(mocked name) [22m[20D[20C[1000D[K﻿[1mname[22m [2m(mocked name) [22m[20D[20C[1000D[K﻿[1mname[22m [2m(mocked name) [22m[20D[20C[1000D[K﻿[1mname[22m [2m(mocked name) [22m[20D[20C[1000D[K﻿[1mname[22m [2m(mocked name) [22m[20D[20C[1000D[K﻿[1mname[22m [2m(mocked name) [22m[20D[20C[1000D[K﻿[1mname[22m [2m(mocked name) [22m[20D[20C[1000D[K﻿[1mname[22m [2m(mocked name) [22m[20D[20C[1000D[K﻿[1mname[22m [2m(mocked name) [22m[20D[20C[1000D[K﻿[1mname[22m [2m(mocked name) [22m[20D[20C[1000D[K﻿[1mname[22m [2m(mocked name) [22m[20D[20C[1000D[K﻿[1mname[22m [2m(mocked name) [22m[20D[20C[1000D[K﻿[1mname[22m [2m(mocked name) [22m[20D[20C[1000D[K﻿[1mname[22m [36mawesome_package[39m[21D[21C
+[?25h[1000D[K﻿[1mversion[22m [2m(1.0.0) [22m0.0.1
+[17D[17C[1000D[K﻿[1mversion[22m [2m(1.0.0) [22m[17D[17C[1000D[K﻿[1mversion[22m [2m(1.0.0) [22m[17D[17C[1000D[K﻿[1mversion[22m [2m(1.0.0) [22m[17D[17C[1000D[K﻿[1mversion[22m [2m(1.0.0) [22m[17D[17C[1000D[K﻿[1mversion[22m [2m(1.0.0) [22m[17D[17C[1000D[K﻿[1mversion[22m [2m(1.0.0) [22m[17D[17C[1000D[K﻿[1mversion[22m [36m0.0.1[39m[14D[14C
+[?25h
